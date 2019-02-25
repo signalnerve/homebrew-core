@@ -11,9 +11,12 @@ class Sphinx < Formula
     sha256 "cc087ddbceb97fea4fd3bf32e53394675519e89102ec968e4d68eae10af06930" => :high_sierra
     sha256 "7922ac605b2bde97aa86a87a524c2a4cac2504047e2c78bcd05b055220862e32" => :sierra
   end
+  
+  option "with-mysql@5.7", "Force compiling against MySQL 5.7" 
 
   depends_on "mysql"
   depends_on "openssl"
+  depends_on "mysql@5.7" => :optional
 
   resource "stemmer" do
     url "https://github.com/snowballstem/snowball.git",
