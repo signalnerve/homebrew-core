@@ -12,10 +12,11 @@ class Sphinx < Formula
     sha256 "7922ac605b2bde97aa86a87a524c2a4cac2504047e2c78bcd05b055220862e32" => :sierra
   end
   
+  option "with-mysql", "Force compiling against current MySQL" 
   option "with-mysql@5.7", "Force compiling against MySQL 5.7" 
 
-  depends_on "mysql"
   depends_on "openssl"
+  depends_on "mysql" => :optional
   depends_on "mysql@5.7" => :optional
 
   resource "stemmer" do
